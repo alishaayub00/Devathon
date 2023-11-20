@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Doctor Appointment Dashboard</title>
+    <style>
+body {
+    background-image: url('./image/th.jpg');
+    background-repeat: no-repeat;
+  background-size: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    margin: 0;
+    
+}
+
+.container {
+    text-align: center;
+    border: 1px solid #0e3105;
+    padding: 20px;
+    border-radius: 10px;
+    text-decoration: double;
+}
+
+form {
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: #87ec58;
+}
+
+label, input {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #87ec58;
+    color: rgb(30, 204, 204);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #db0b50;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor Appointment Dashboard</h1>
+        <form id="appointment-form">
+            <label for="patient-name">Patient Name:</label>
+            <input type="text" id="patient-name" required>
+            <label for="appointment-date">Appointment Date:</label>
+            <input type="date" id="appointment-date" required>
+            <button type="submit">Schedule Appointment</button>
+            <button id="nextBtn">Next</button>
+
+        </form>
+        <div id="appointment-details"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+document.getElementById("appointment-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var patientName = document.getElementById("patient-name").value;
+    var appointmentDate = document.getElementById("appointment-date").value;
+
+    var appointmentDetailsDiv = document.getElementById("appointment-details");
+    appointmentDetailsDiv.innerHTML = "<h2>Appointment Details</h2>";
+    appointmentDetailsDiv.innerHTML += "<p><strong>Patient Name:</strong> " + patientName + "</p>";
+    appointmentDetailsDiv.innerHTML += "<p><strong>Appointment Date:</strong> " + appointmentDate + "</p>";
+});
+document.getElementById("nextBtn").addEventListener("click", function() {
+     window.location.href = "Client.html";
+ });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="canonical" href="https://doctorstrange.jpxoi.com/">
+
+        <link href="styles.css" rel="stylesheet">
+
+        <title>Doctor Strange Portal | Jean Paul Fernandez</title>
+        <meta name="description" content="Content creator, web developer, and video editor, with extensive knowledge and years of experience in all three areas, delivering quality work.">
+        <meta name="keywords" content="jean paul fernandez, frontend, developer, video editor, video, designer, content creator, responsive">
+        <meta name="author" content="Jean Paul Fernandez">
+        <meta name="copyright" content="Jean Paul Fernandez">
+    </head>
+    <body>
+        <div id="portal">
+        </div>
+
+        <button id="getStartedButton">Get Started</button>
+
+
+        <script type="text/javascript" src="script.js">
+        </script>
+        <style>
+            :root {
+    background-color: #000;
+}
+
+#portal {
+    margin: auto;
+    margin-top: 200px;
+    width: 1px;
+    height: 1px;
+    border: 0px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 100px 40px
+    rgba(255, 208, 0, 0.767);
+
+    animation: rotate 1s linear infinite;
+}
+
+.spark {
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: linear-gradient(orange, #000);
+    margin: auto;
+    transform-origin: top left;
+
+    animation: resizer 1s ease-in-out infinite;
+}
+
+@keyframes resizer {
+    0% {height: 100px;}
+    50% {height: 150px;}
+    100% {height: 100px;}
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+        </style>
+        <script>
+            let portal = document.getElementById("portal");
+
+for (let i = 0; i < 360; i++) {
+    let spark = document.createElement("div");
+    spark.className = "spark";
+    spark.style.rotate = i * 2 + 'deg';
+
+    let sparkTranslation = Math.random() * (120 - 100) + 100;
+    spark.style.transform = 'translate('+sparkTranslation+'px)';
+    
+    portal.appendChild(spark);
+}
+
+document.getElementById("getStartedButton").addEventListener("click", function() {
+    window.location.href = "Appointment.html";
+});
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Doctor's Profile</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dr. John Doe</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="doctor-info">
+            <img src="./image/download (1).jpg" alt="jpg">
+        </section>
+
+        <section class="appointment-form">
+            <h2>Book an Appointment</h2>
+            <form id="appointmentForm">
+                <label for="patientName">Name:</label>
+                <input type="text" id="patientName" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required><br>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" required><br>
+
+                <button type="submit">Submit Appointment</button>
+            </form>
+        </section>
+    </div>
+    <style>
+
+        
+.doctor-info {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.appointment-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.appointment-form label, .appointment-form input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.appointment-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.appointment-form button:hover {
+    background-color: #45a049;
+}
+
+    </style>
+    <script>
+        document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    var patientName = document.getElementById("patientName").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var date = document.getElementById("date").value;
+
+    console.log("Appointment booked!");
+    console.log("Name: " + patientName);
+    console.log("Email: " + email);
+    console.log("Phone: " + phone);
+    console.log("Preferred Date: " + date);
+});
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
